@@ -12,10 +12,13 @@ with open(sys.argv[1], 'rb') as csvFile , open(filepath + '/reformated-'+ filena
     outputWriter = csv.writer(outputFile, delimiter=',')
 
     for row in readObject:
-        for item in row:
-            if item == 'null':
-                item = ''
+        print row
+        for n,i in enumerate(row):
+            if i == 'null':
+                row[n] = ''
 
+
+        print row
         outputWriter.writerow(row)
 
 
